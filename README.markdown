@@ -26,8 +26,14 @@ class { 'hudson-native': }
 ```
 
 ## Test Install
-`which hudson; hudson --version`
-
+`sudo service hudson status`  
+should return a result similar to  
+`hudson (pid 13276 13248 12690) is running...`  
+  
+  
+`sudo netstat -tulpn | grep 8080`  
+should return a result similar to  
+`tcp 0 0 :::8080 :::* LISTEN 12697/java`
 
 ## Links
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_RPM

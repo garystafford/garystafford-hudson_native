@@ -43,5 +43,5 @@ should return a result similar to
 * http://wiki.eclipse.org/Hudson-ci
 
 ## Useful Commands
-* ls -l /etc/init.d/ 
-* cat /etc/services
+* `ls -l /etc/init.d/`
+* `cat /etc/services`

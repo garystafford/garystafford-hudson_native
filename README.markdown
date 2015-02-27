@@ -1,8 +1,8 @@
 # Hudson Native Installer #
 
 Puppet module for installing Hudson CI using native Unix/Linux installation packages. 
-Hudson runs in a JVM, and requires Java be installed. 
-I suggest using the `puppetlabs-java` module.
+Hudson runs within a JVM, and therefore requires Java be installed. 
+This module has a dependency on the  `puppetlabs-java` module.
 
 
 ## Support
@@ -45,3 +45,4 @@ should return a result similar to
 ## Useful Commands
 * `ls -l /etc/init.d/`
 * `cat /etc/services`
+* `java -version`

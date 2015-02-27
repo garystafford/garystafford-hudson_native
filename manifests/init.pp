@@ -27,7 +27,11 @@ class hudson_native {
       user    => root,
       onlyif  => 'test ! -f /etc/init.d/hudson'
     } ->
-    package { 'hudson': ensure => 'installed' }
+    package { 'hudson': ensure => 'installed' } ->
+    service { 'hudson':
+      ensure => running,
+      enable => true,
+    }
   } elsif $::osfamily == 'RedHat' {
     exec { 'add-hudson-repo':
       command => 'wget -O /etc/yum.repos.d/hudson.repo http://hudson-ci.org/redhat/hudson.repo',
@@ -40,8 +44,11 @@ class hudson_native {
       returns => [0, 100],
       onlyif  => 'test ! -f /etc/init.d/hudson'
     } ->
-    package { 'hudson': ensure => 'installed' }
-
+    package { 'hudson': ensure => 'installed' } ->
+    service { 'hudson':
+      ensure => running,
+      enable => true,
+    }
   } else {
     notify { "Operating system ${::operatingsystem} not supported": }
   }

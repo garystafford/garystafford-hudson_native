@@ -14,6 +14,8 @@ class hudson_native {
   Exec {
     path => ['/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/'] }
 
+  require java
+
   if $::osfamily == 'Debian' {
     exec { 'add-hudson-repo':
       command => 'sh -c \"echo \'deb http://hudson-ci.org/debian /\' > /etc/apt/sources.list.d/hudson.list\"',
@@ -39,6 +41,7 @@ class hudson_native {
       onlyif  => 'test ! -f /etc/init.d/hudson'
     } ->
     package { 'hudson': ensure => 'installed' }
+
   } else {
     notify { "Operating system ${::operatingsystem} not supported": }
   }

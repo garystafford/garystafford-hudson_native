@@ -28,10 +28,13 @@ class { 'hudson-native': }
 ```
 
 ## Test Install
+`sudo /etc/init.d/hudson status`  
+should return a result similar to  
+`hudson is running`  
+  
 `sudo service hudson status`  
 should return a result similar to  
 `hudson (pid 13276 13248 12690) is running...`  
-  
   
 `sudo netstat -tulpn | grep 8080`  
 should return a result similar to  
@@ -42,3 +45,6 @@ should return a result similar to
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_DEB
 * http://wiki.eclipse.org/Hudson-ci/Using_Hudson/Installing_Hudson
 * http://wiki.eclipse.org/Hudson-ci
+
+## Useful Commands
+* ls -l /etc/init.d/

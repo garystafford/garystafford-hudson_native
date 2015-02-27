@@ -27,16 +27,18 @@ include 'hudson-native'
 class { 'hudson-native': }
 ```
 
-## Test Install
-`sudo service hudson status` or `sudo /etc/init.d/hudson status`
-should return a result similar to  
-`hudson (pid 13276 13248 12690) is running...`  
+## Test Install of Java and Hudson
   
 `sudo netstat -tulpn | grep 8080`  
 should return a result similar to  
-`tcp 0 0 :::8080 :::* LISTEN 12697/java`
+`tcp 0 0 :::8080 :::* LISTEN 12697/java`  
+  
+`sudo service hudson status` or  
+`sudo /etc/init.d/hudson status`  
+should return a result similar to  
+`hudson (pid 13276) is running...`  
 
-## Links
+## Hudson Links
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_RPM
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_DEB
 * http://wiki.eclipse.org/Hudson-ci/Using_Hudson/Installing_Hudson

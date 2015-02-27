@@ -1,6 +1,10 @@
 {
 	"author": "Gary A. Stafford",
-	"dependencies": [],
+	"dependencies": [{
+			"name": "puppetlabs-java",
+			"version_requirement": ">=1.1.2"
+		}
+	],
 	"license": "Apache-2.0",
 	"name": "garystafford-hudson_native",
 	"operatingsystem_support": [{

@@ -29,7 +29,7 @@ class hudson_native {
       onlyif  => 'test ! -f /etc/init.d/hudson'
     } ->
     exec { 'install-hudson':
-      command => 'sudo apt-get -o Dpkg::Options::="--force-confnew" -yq --force-yes install hudson',
+      command => 'apt-get -o Dpkg::Options::="--force-confnew" -yq --force-yes install hudson',
       user    => root,
       returns => [0, 100],
       onlyif  => 'test ! -f /etc/init.d/hudson'

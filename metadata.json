@@ -9,8 +9,7 @@
 	"name": "garystafford-hudson_native",
 	"operatingsystem_support": [{
 			"operatingsystem": "Ubuntu",
-			"operatingsystemrelease": [ "12.04",
-				"14.04", "14.10"
+			"operatingsystemrelease": [ "14.04.2 LTS"
 			]
 		},{
 			"operatingsystem": "CentOS",

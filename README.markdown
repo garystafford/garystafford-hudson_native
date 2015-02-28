@@ -8,12 +8,11 @@ This module has a dependency on the  `puppetlabs-java` module.
 ## Support
 
 This module is currently tested on:
-* CentOS 6.6 (working now)
-* Ubuntu 12.04 (coming soon - TODO)
-* Ubuntu 14.04 (coming soon - TODO)
-* Ubuntu 14.10 (coming soon - TODO)
+* CentOS 6.5
+* CentOS 6.6
+* Ubuntu 14.04.02 LTS
 
-It may work on other distros. Needs to be tested.
+Will work on other Debian/RHEL distros. Needs to be tested.
 
 ## Usage
 
@@ -29,6 +28,11 @@ class { 'hudson-native': }
 
 ## Test Install of Java and Hudson
   
+`java -version`  
+should return a result similar to  
+`OpenJDK Runtime Environment (rhel-2.5.4.0.el6_6-x86_64 u75-b13)`  
+`OpenJDK 64-Bit Server VM (build 24.75-b04, mixed mode)`
+    
 `sudo netstat -tulpn | grep 8080`  
 should return a result similar to  
 `tcp 0 0 :::8080 :::* LISTEN 12697/java`  
@@ -39,12 +43,13 @@ should return a result similar to
 `hudson (pid 13276) is running...`  
 
 ## Hudson Links
+* http://wiki.eclipse.org/Hudson-ci
+* http://wiki.eclipse.org/Hudson-ci/Using_Hudson/Installing_Hudson
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_RPM
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_DEB
-* http://wiki.eclipse.org/Hudson-ci/Using_Hudson/Installing_Hudson
-* http://wiki.eclipse.org/Hudson-ci
 
-## Useful Commands
+## Other Useful Commands
+* `sudo cat /var/log/hudson/hudson.log # hudson log`
+* `cat /etc/default/hudson # defaults for hudson when running`
 * `ls -l /etc/init.d/`
 * `cat /etc/services`
-* `java -version`

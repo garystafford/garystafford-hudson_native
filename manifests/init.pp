@@ -18,19 +18,21 @@ class hudson_native {
 
   if $::osfamily == 'Debian' {
     exec { 'add-hudson-repo':
-      command => 'sh -c \"echo \'deb http://hudson-ci.org/debian /\' > /etc/apt/sources.list.d/hudson.list\"',
+      command => 'sh -c "echo \'deb http://hudson-ci.org/debian /\' > /etc/apt/sources.list.d/hudson.list"',
       user    => root,
       onlyif  => 'test ! -f /etc/init.d/hudson'
     } ->
     exec { 'update-apt-get':
-      command => 'apt-get -y update',
+      command => 'apt-get -yq update',
       user    => root,
+      returns => [0, 100],
       onlyif  => 'test ! -f /etc/init.d/hudson'
     } ->
-    package { 'hudson': ensure => 'installed' } ->
-    service { 'hudson':
-      ensure => running,
-      enable => true,
+    exec { 'install-hudson':
+      command => 'sudo apt-get -o Dpkg::Options::="--force-confnew" -yq --force-yes install hudson',
+      user    => root,
+      returns => [0, 100],
+      onlyif  => 'test ! -f /etc/init.d/hudson'
     }
   } elsif $::osfamily == 'RedHat' {
     exec { 'add-hudson-repo':

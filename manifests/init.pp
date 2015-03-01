@@ -10,11 +10,16 @@
 #
 # Sample Usage:
 #
-class hudson_native {
+class hudson_native ($http_port = 8080) {
   Exec {
     path => ['/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/'] }
 
   require java
+
+  file { '/etc/profile.d/set_http_port.sh':
+    ensure  => present,
+    content => inline_template("HTTP_PORT=${http_port}")
+  }
 
   if $::osfamily == 'Debian' {
     exec { 'add-hudson-repo':

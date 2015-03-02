@@ -16,14 +16,15 @@ Will work on other Debian/RHEL distros. Needs to be tested.
 
 ## Usage
 
-The module includes a single class:
+The module includes a single `hudson-native` class. 
+The `http_port` parameter allows you to, optionally, 
+start Hudson on port other than the default port of 8080. 
+Currenlty, `http_port` only works for RHEL distros.
 
-```puppet
-include 'hudson-native'
 ```
-
-```puppet
-class { 'hudson-native': }
+include 'hudson_native'  
+class { 'hudson_native': }  
+class { 'hudson_native': http_port => 8094 }
 ```
 
 ## Test Install of Java and Hudson

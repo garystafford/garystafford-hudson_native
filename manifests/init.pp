@@ -2,24 +2,25 @@
 #
 # This module manages hudson_native
 #
-# Parameters: none
+# Parameters:
+# [*http_port*]
+#   Optionally, start Hudson on port other than the default port of 8080.
+#   Currenlty, only works for RHEL distros.
 #
 # Actions:
 #
 # Requires: see Modulefile
 #
 # Sample Usage:
+#   include 'hudson_native'
+#   class { 'hudson_native': }
+#   class { 'hudson_native': http_port => 8094 }
 #
 class hudson_native ($http_port = 8080) {
   Exec {
     path => ['/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/'] }
 
   require java
-
-  file { '/etc/profile.d/set_http_port.sh':
-    ensure  => present,
-    content => inline_template("HTTP_PORT=${http_port}")
-  }
 
   if $::osfamily == 'Debian' {
     exec { 'add-hudson-repo':
@@ -56,6 +57,14 @@ class hudson_native ($http_port = 8080) {
       ensure => running,
       enable => true,
     }
+
+    file_line { 'hudson-port-replace':
+      path  => '/etc/sysconfig/hudson',
+      line  => "HUDSON_PORT=${http_port}",
+      match => '^HUDSON_PORT=',
+    }
+
+    file { '/etc/sysconfig/hudson': notify => Service['hudson'], }
   } else {
     notify { "Operating system ${::operatingsystem} not supported": }
   }

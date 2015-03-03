@@ -16,7 +16,7 @@ Will work on other Debian/RHEL distros. Needs to be tested.
 
 ## Usage
 
-The module includes a single `hudson-native` class. 
+The module includes a single `hudson_native` class. 
 The `http_port` parameter allows you to optionally 
 start Hudson on port other than the default port of 8080. 
 Currenlty, `http_port` only works for RHEL distros.

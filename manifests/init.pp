@@ -39,7 +39,19 @@ class hudson_native ($http_port = 8080) {
       user    => root,
       returns => [0, 100],
       onlyif  => 'test ! -f /etc/init.d/hudson'
+    } ->
+    service { 'hudson':
+      ensure => running,
+      enable => true,
     }
+
+    file_line { 'hudson-port-replace':
+      path  => '/etc/default/hudson',
+      line  => "HTTP_PORT=${http_port}",
+      match => '^HTTP_PORT=8080',
+    }
+
+    file { '/etc/default/hudson': notify => Service['hudson'], }
   } elsif $::osfamily == 'RedHat' {
     exec { 'add-hudson-repo':
       command => 'wget -O /etc/yum.repos.d/hudson.repo http://hudson-ci.org/redhat/hudson.repo',
@@ -61,7 +73,7 @@ class hudson_native ($http_port = 8080) {
     file_line { 'hudson-port-replace':
       path  => '/etc/sysconfig/hudson',
       line  => "HUDSON_PORT=${http_port}",
-      match => '^HUDSON_PORT=',
+      match => '^HUDSON_PORT=8080',
     }
 
     file { '/etc/sysconfig/hudson': notify => Service['hudson'], }

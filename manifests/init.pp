@@ -4,8 +4,8 @@
 #
 # Parameters:
 # [*http_port*]
-#   Start Hudson on port other than the default port of 8080. Currenlty, only
-#   works for RHEL distros.
+#   Start Hudson on port other than the default port of 8080.
+#   May require manual restart of hudson service to pickup change.
 #
 # Actions:
 #

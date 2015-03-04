@@ -53,4 +53,4 @@ should return a result similar to
 * `sudo cat /var/log/hudson/hudson.log # hudson log`
 * `cat /etc/default/hudson # defaults for hudson when running`
 * `ls -l /etc/init.d/`
-* `cat /etc/services`# Dillinger
+* `cat /etc/services`

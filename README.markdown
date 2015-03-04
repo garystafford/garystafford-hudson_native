@@ -2,9 +2,10 @@
 
 Puppet module for installing Hudson CI using native Unix/Linux installation packages. 
 Hudson runs within a JVM, and therefore requires Java be installed. 
-This module has a dependency on the  `puppetlabs-java` module.
-
-
+This module has a dependency on the `puppetlabs-java` module.
+  
+[![Hudson Initial View](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonCIServerInitialSetup_preview.png?raw=true)](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonCIServerInitialSetup.png?raw=true)
+  
 ## Support
 
 This module is currently tested on:
@@ -19,7 +20,7 @@ Will work on other Debian/RHEL distros. Needs to be tested.
 The module includes a single `hudson_native` class. 
 The `http_port` parameter allows you to optionally 
 start Hudson on port other than the default port of 8080. 
-Currenlty, `http_port` may require a manual restart of the Hudson service to 
+Currenlty, `http_port` requires a manual restart of the Hudson service to 
 switch from default port of 8080 to new port.
 
 ```

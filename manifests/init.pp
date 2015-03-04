@@ -72,8 +72,8 @@ class hudson_native ($http_port = 8080) {
 
     file_line { 'hudson-port-replace':
       path  => '/etc/sysconfig/hudson',
-      line  => "HUDSON_PORT=${http_port}",
-      match => '^HUDSON_PORT=8080',
+      line  => "HUDSON_PORT=\"${http_port}\"",
+      match => '^HUDSON_PORT="8080"',
     }
 
     file { '/etc/sysconfig/hudson': notify => Service['hudson'], }

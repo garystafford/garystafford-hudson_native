@@ -7,7 +7,7 @@ This module has a dependency on the `puppetlabs-java` module.
   
 [![Hudson Up and Running](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonUpandRunning_preview.png?raw=true)](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonUpandRunning.png?raw=true)
   
-## Support
+### Support
 This module is currently tested on:
 * CentOS 6.5
 * CentOS 6.6
@@ -15,7 +15,7 @@ This module is currently tested on:
 
 Module will work on other Debian/RHEL distros. Needs to be tested.
 
-## Usage
+### Usage
 The module includes a single `hudson_native` class. 
 The `http_port` parameter allows you to optionally 
 start Hudson on port other than the default port of 8080. 
@@ -28,7 +28,7 @@ class { 'hudson_native': }
 class { 'hudson_native': http_port => 8094 }
 ```
 
-## Test Install of Java and Hudson
+### Test Install of Java and Hudson
 `java -version`  
 should return a result similar to  
 `OpenJDK Runtime Environment (rhel-2.5.4.0.el6_6-x86_64 u75-b13)`  
@@ -43,13 +43,13 @@ should return a result similar to
 should return a result similar to  
 `hudson (pid 13276) is running...`  
 
-## Hudson Links
+### Hudson Links
 * http://wiki.eclipse.org/Hudson-ci
 * http://wiki.eclipse.org/Hudson-ci/Using_Hudson/Installing_Hudson
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_RPM
 * http://wiki.eclipse.org/Hudson-ci/Installing_Hudson_DEB
 
-## Other Useful Commands
+### Other Useful Commands
 * `sudo cat /var/log/hudson/hudson.log # hudson log`
 * `cat /etc/default/hudson # defaults for hudson when running`
 * `ls -l /etc/init.d/`

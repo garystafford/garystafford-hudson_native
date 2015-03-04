@@ -5,6 +5,7 @@ Hudson runs within a JVM, and therefore requires Java be installed.
 This module has a dependency on the `puppetlabs-java` module.
   
 [![Hudson Initial View](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonCIServerInitialSetup_preview.png?raw=true)](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonCIServerInitialSetup.png?raw=true)
+[![Hudson Up and Running](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonUpandRunning_preview.png?raw=true)](https://github.com/garystafford/garystafford-hudson_native/blob/master/images/HudsonUpandRunning.png?raw=true)
   
 ## Support
 

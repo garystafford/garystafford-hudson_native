@@ -1,5 +1,5 @@
 # Hudson CI Server Native Installer #
-Puppet module for installing Oracle's [Hudson CI Server](http://hudson-ci.org) using native Unix/Linux installation packages. 
+Puppet module for downloading and installing Oracle's [Hudson CI Server](http://hudson-ci.org) using native Unix/Linux installation packages. 
 Hudson runs within a JVM, and therefore requires Java be installed. 
 This module has a dependency on the `puppetlabs-java` module.
   

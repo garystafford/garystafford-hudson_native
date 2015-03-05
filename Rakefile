@@ -10,7 +10,7 @@ PuppetSyntax.fail_on_deprecation_notices = false
 
 desc "Run syntax, lint, and parse tests."
 task :test => [
-  'syntax:manifests',
+  'syntax',
   :lint,
   :parse,
   :metadata,

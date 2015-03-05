@@ -24,8 +24,8 @@
 	"requirements": [],
 	"source": "https://github.com/garystafford/garystafford-hudson_native",
 	"issues_url": "https://github.com/garystafford/garystafford-hudson_native/issues",
-	"summary": "Puppet module for installing Oracle's Hudson CI Server using native Unix/Linux installation packages",
-	"tags": [ "Hudson"
+	"summary": "Downloads and installs Oracle's Hudson CI Server using native Unix/Linux installation packages",
+	"tags": [ "Hudson", "CI", "Oracle"
 	],
-	"version": "0.1.0"
+	"version": "0.1.1"
 }
